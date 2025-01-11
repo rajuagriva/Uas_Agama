@@ -1,0 +1,150 @@
+/* kuis.css */
+
+/* Styling Umum untuk Body */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Styling untuk Card Header */
+.card-header {
+    background-color: #343a40;
+    color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+/* Indikator Soal */
+#indikatorSoal .indikator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 2px solid #6B73FF;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    animation: blink 1.5s infinite;
+}
+
+#indikatorSoal .indikator.answered {
+    background-color: #28a745;
+    border-color: #28a745;
+    animation: none;
+}
+
+#indikatorSoal .indikator.current {
+    background-color: #007bff;
+    border-color: #007bff;
+    animation: none;
+    transform: scale(1.2);
+}
+
+#indikatorSoal .indikator.unanswered {
+    background-color: #ffffff;
+    animation: blink 1.5s infinite;
+}
+
+/* Keyframes untuk Blink Animasi */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Soal Styling */
+#soal {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+/* Pilihan Jawaban */
+#pilihanJawaban .form-check {
+    margin-bottom: 20px;
+    animation: fadeInUp 0.5s;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Navigasi Button */
+button.btn {
+    width: 120px;
+    transition: transform 0.2s;
+}
+
+button.btn:hover {
+    transform: scale(1.05);
+}
+
+/* Timer Styling */
+#timer {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Progress Bar Styling */
+.progress {
+    height: 20px;
+    border-radius: 10px;
+}
+
+.progress-bar {
+    transition: width 1s linear;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    #indikatorSoal .indikator {
+        width: 18px;
+        height: 18px;
+    }
+
+    button.btn {
+        width: 100px;
+    }
+
+    .progress {
+        width: 150px;
+    }
+
+    #timer {
+        font-size: 0.9rem;
+    }
+}
+
+/* Tambahkan style indikator soal */
+.indicator-dot {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #ddd;
+}
+
+.indicator-dot.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+
+.indicator-dot.answered {
+    background-color: #28a745;
+    color: white;
+    border-color: #1e7e34;
+}
+
+.timer {
+    font-size: 10rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+    color: #ce1b1b;
+}

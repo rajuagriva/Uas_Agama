@@ -1,0 +1,92 @@
+/* hasil.css */
+
+/* Styling Umum untuk Body */
+body {
+    background-color: #f8f9fa;
+}
+
+/* Styling untuk Card Header */
+.card-header {
+    background-color: #343a40;
+    color: white;
+}
+
+/* Styling untuk Progress Bar */
+.progress-bar {
+    transition: width 0.5s ease;
+}
+
+/* Styling untuk Timer */
+#timer {
+    font-weight: bold;
+}
+
+/* Styling untuk Highlight Jawaban Benar */
+.table .text-success {
+    background-color: #d4edda;
+    transition: background-color 0.5s ease;
+}
+
+/* Styling untuk Highlight Jawaban Salah */
+.table .text-danger {
+    background-color: #f8d7da;
+    transition: background-color 0.5s ease;
+}
+
+/* Styling untuk Riwayat Kuis */
+#riwayatKuis tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Styling untuk Nama Pengguna */
+#namaPengguna {
+    font-size: 1.5rem;
+    font-weight: bold;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Additional Styling for Charts */
+canvas {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 10px;
+    animation: slideIn 1s ease-in-out;
+}
+
+/* Ensuring Cards are Full Height */
+.card.h-100 {
+    height: 100%;
+}
+
+/* Adding some margin to tables */
+table {
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animasi untuk Button */
+button {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animasi untuk Card Body */
+.card-body {
+    animation: fadeInUp 1s ease-in-out;
+}

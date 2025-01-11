@@ -1,0 +1,72 @@
+/* jumlah_soal.css */
+
+/* Styling Umum untuk Body */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Styling untuk Card Header */
+.card-header {
+    background-color: #343a40;
+    color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+/* Informasi Soal */
+#infoSoal p {
+    font-size: 1.1rem;
+}
+
+/* Form Select */
+.form-select {
+    height: 50px;
+    font-size: 1.1rem;
+}
+
+/* Button Styling */
+button.btn-primary {
+    background-color: #6B73FF;
+    color: #ffffff;
+    border: none;
+    transition: background-color 0.3s, transform 0.2s;
+    border-radius: 30px;
+    padding: 12px 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+button.btn-primary:hover {
+    background-color: #000DFF;
+    transform: scale(1.05);
+}
+
+/* Footer Text */
+.text-center.mt-4.text-dark {
+    opacity: 0.8;
+    animation: fadeIn 2s ease-in-out;
+    font-size: 0.9rem;
+}
+
+/* Animasi Tambahan */
+.animate__pulse {
+    animation-duration: 2s;
+}
+
+.animate__infinite {
+    animation-iteration-count: infinite;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .form-select {
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    button.btn-primary {
+        padding: 10px 0;
+        font-size: 1rem;
+    }
+}

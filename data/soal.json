@@ -1,0 +1,1226 @@
+[
+        {
+            "ID": "1",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Melalui sila pertama Pancasila “Ketuhanan Yang Maha Esa” bangsa Indonesia diharapkan:",
+            "Pilihan_jawaban": {
+                "a": "memandang semua agama dan kepercayaan sama",
+                "b": "menyatakan bahwa ada kekuasaan tertinggi di luar diri manusia yaitu Tuhan Yang Esa",
+                "c": "memandang bahwa agama yang satu lebih benar dari agama yang lain",
+                "d": "menganggap bahwa tidak perlu manusia beragama sebab yang penting adalah percaya adanya Tuhan"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "2",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Adanya alam semesta membuktikan bahwa Tuhan Yang Maha Esa itu ada. Pandangan demikian disebut:",
+            "Pilihan_jawaban": {
+                "a": "argumentasi moral",
+                "b": "argumentasi teleologis",
+                "c": "argumentasi kosmologis",
+                "d": "argumentasi rasional"
+            },
+            "Jawaban_Benar": "c"
+        },
+        {
+            "ID": "3",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Alkitab mengungkapkan bahwa Tuhan Yang Maha Esa itu disebut Allah (Elohim), Tuhan (Adonai) dan TUHAN yang Mahatinggi (Yahweh). Jika demikian maka:",
+            "Pilihan_jawaban": {
+                "a": "kita tidak boleh lagi menyebut Tuhan itu Allah",
+                "b": "kita sebaiknya menyebut Tuhan itu Yahweh saja",
+                "c": "kita boleh menyebut Tuhan dengan nama yang kita suka",
+                "d": "kita boleh menyapa Tuhan dengan beragam nama atau sebutan"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "4",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Tuhan Yesus menegaskan bahwa Allah itu Roh adanya (Yoh 4:24). Itu berarti:",
+            "Pilihan_jawaban": {
+                "a": "dia maha hadir",
+                "b": "dia berbicara kepada roh dan jiwa kita",
+                "c": "dia dapat disapa dan disembah di berbagai ruang dan waktu",
+                "d": "semua jawaban di atas benar"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "5",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Alkitab mengajarkan bahwa Tuhan Yang Maha Esa itu adalah Allah Bapa. Kita menyebut-Nya Allah Bapa karena:",
+            "Pilihan_jawaban": {
+                "a": "dia Pencipta alam semesta termasuk manusia",
+                "b": "dia pribadi maha besar",
+                "c": "dia dekat dan peduli dengan ciptaan-Nya",
+                "d": "semua jawaban di atas benar"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "6",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Kitab Injil mencatat bahwa Yesus Kristus kerap menyatakan bahwa Allah adalah Bapa-Nya. Itu berarti:",
+            "Pilihan_jawaban": {
+                "a": "Allah adalah ayah biologis-Nya sebab Ia dikandung dan dilahirkan Maria",
+                "b": "Dia mengajari kita mengenal dan menghormati Allah sebagai Pribadi yang dekat, penuh kasih, dan sangat peduli",
+                "c": "Allah Bapa lebih berkuasa daripada diri-Nya",
+                "d": "sebelum datang ke dunia ini Yesus adalah ciptaan Allah Bapa"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "7",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Analogi yang dapat membantu pemahaman kita tentang ketritunggalan Allah adalah:",
+            "Pilihan_jawaban": {
+                "a": "H₂O yang pada waktu dan ruang tertentu dapat berwujud cair, padat, dan uap",
+                "b": "matahari yang memancarkan cahaya, panas, dan terang",
+                "c": "buah utuh yang terdiri dari kulit, sari, dan biji",
+                "d": "ketiga di atas berguna meski tidak sempurna"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "8",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Keberatan orang memahami bahwa Allah adalah Bapa yang baik dan maha kuasa karena:",
+            "Pilihan_jawaban": {
+                "a": "banyak orang yang percaya kepada Allah justru menderita",
+                "b": "di muka bumi banyak kejahatan seolah dibiarkan oleh Allah",
+                "c": "banyak orang dibesarkan oleh ayah yang kejam walau tekun beragama",
+                "d": "semua jawaban di atas benar"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "9",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Maksud Allah Tritunggal mengizinkan penderitaan dan kejahatan di muka bumi adalah:",
+            "Pilihan_jawaban": {
+                "a": "menguji manusia supaya semakin teguh imannya",
+                "b": "menyatakan bahwa Allah bukanlah pribadi maha besar dan maha kuasa",
+                "c": "sebagai alat pembalasan dan penghukuman bagi manusia yang tidak taat kepada-Nya",
+                "d": "supaya manusia merasakan penderitaan"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "10",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Sikap hidup yang patut kita nyatakan kepada Allah Tritunggal adalah:",
+            "Pilihan_jawaban": {
+                "a": "bersyukur kepada-Nya hanya jika Ia menjawab doa dan permohonan kita",
+                "b": "menunjukkan hormat kepada-Nya hanya apabila kita sehat dan sukses",
+                "c": "tetap setia dan berharap walaupun berada di tengah pergumulan hidup",
+                "d": "meninggalkan Dia sebab di zaman ini sudah ada sains dan teknologi membantu hidup manusia"
+            },
+            "Jawaban_Benar": "c"
+        },
+        {
+            "ID": "11",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Pendapat umum di Indonesia mengenai Yesus Kristus adalah:",
+            "Pilihan_jawaban": {
+                "a": "Dia Anak Allah",
+                "b": "Dia Guru Moral",
+                "c": "Dia seorang nabi",
+                "d": "Dia ciptaan Allah"
+            },
+            "Jawaban_Benar": "c"
+        },
+        {
+            "ID": "12",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Setelah dilahirkan di Bethlehem, Yesus Kristus dibesarkan di:",
+            "Pilihan_jawaban": {
+                "a": "Kana",
+                "b": "Nazaret",
+                "c": "Kapernaum",
+                "d": "Yerikho"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "13",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Sekitar usia 14-30 tahun pekerjaan Yesus Kristus adalah:",
+            "Pilihan_jawaban": {
+                "a": "Nelayan",
+                "b": "Petani",
+                "c": "Tukang kayu",
+                "d": "Pemungut cukai"
+            },
+            "Jawaban_Benar": "c"
+        },
+        {
+            "ID": "14",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Yesus disebut atau digelari Kristus, artinya:",
+            "Pilihan_jawaban": {
+                "a": "Dia yang mulia",
+                "b": "Dia yang maha kudus",
+                "c": "Dia yang diurapi",
+                "d": "Dia yang mahatanu"
+            },
+            "Jawaban_Benar": "c"
+        },
+        {
+            "ID": "15",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Yesus Kristus juga disebut Tuhan, artinya:",
+            "Pilihan_jawaban": {
+                "a": "Dia pemerintah atas alam semesta",
+                "b": "Dia yang harus kita dengar dan taati",
+                "c": "Dia bukan Allah",
+                "d": "Dia pelayan yang setia"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "16",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Selama 3,5 tahun memberitakan Injil Kerajaan Allah, Yesus Kristus berperan sebagai Guru. Kitab Injil menyingkapkan bahwa:",
+            "Pilihan_jawaban": {
+                "a": "Yesus adalah Guru yang mengerti Kitab Suci",
+                "b": "Yesus adalah Guru berwibawa",
+                "c": "Yesus adalah Guru yang menerapkan apa yang diajarkan",
+                "d": "Ketiga jawaban di atas benar"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "17",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Yesus Kristus digelari Anak Allah:",
+            "Pilihan_jawaban": {
+                "a": "Karena Ia dikandung dan dilahirkan oleh Maria",
+                "b": "Setara, sehakikat dengan Allah Bapa dan Roh Kudus",
+                "c": "Sang Bapa menyebut-Nya sebagai Anak yang kepada-Nya Ia berkenan",
+                "d": "Jawaban B dan C dapat memberi penjelasan memadai"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "18",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Keberatan banyak orang bahwa Yesus Kristus adalah Allah, karena:",
+            "Pilihan_jawaban": {
+                "a": "Tidak mungkin Allah menjadi manusia sebab manusia berdosa",
+                "b": "Tidak mungkin manusia biasa yang dibesarkan di Nazaret menjadi Allah",
+                "c": "Pandangan itu sebagai penghinaan terhadap Allah yang Maha Besar",
+                "d": "Ketiga jawaban di atas benar"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "19",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Kitab Injil menerangkan beragam teladan hidup Yesus Kristus, di antaranya adalah:",
+            "Pilihan_jawaban": {
+                "a": "Dia kasar dan pemarah",
+                "b": "Dia lemah lembut dan rendah hati",
+                "c": "Dia pemberontak",
+                "d": "Dia suka pamer kekuatan"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "20",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Sikap yang tepat terhadap Yesus Kristus adalah:",
+            "Pilihan_jawaban": {
+                "a": "Percaya dan menerima Dia sebagai Juru selamat",
+                "b": "Setia mempelajari pengajaran dan teladan-Nya yang diungkapkan Kitab Injil",
+                "c": "Membangun relasi akrab dengan Dia melalui doa dan percakapan",
+                "d": "Semua jawaban di atas benar"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "21",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Pandangan yang keliru mengenai Roh Kudus adalah",
+            "Pilihan_jawaban": {
+                "a": "Dia energi Allah bagi seluruh ciptaan",
+                "b": "Dia salah satu Pribadi Allah Tritunggal",
+                "c": "Dia memiliki emosi dan pikiran",
+                "d": "Dia mana kudus"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "22",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Anggapan yang keliru di bawah ini adalah",
+            "Pilihan_jawaban": {
+                "a": "Orang yang didiami oleh Roh Kudus pasti mampu berbahasa lain (glossolalia)",
+                "b": "Orang yang dipenuhi oleh Roh Kudus tidak bisa lagi berbuat dosa",
+                "c": "Orang yang dibaptis oleh Roh Kudus akan menangis histeris",
+                "d": "Jawaban A, B, C benar"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "23",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Kitab Injil memperlihatkan hubungan erat Roh Kudus dengan Yesus Kristus, dengan cara",
+            "Pilihan_jawaban": {
+                "a": "Ketika Yesus hadir dalam kandungan Maria",
+                "b": "Ketika Yesus dibaptis oleh Yohanes Pembaptis di sungai Yordan",
+                "c": "Ketika Yesus mengubah air menjadi anggur di kota Kana",
+                "d": "Jawaban A dan B benar"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "24",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Kitab Injil menerangkan bahwa setelah Yesus dibaptiskan, Ia dituntun oleh Roh Kudus ke padang gurun lalu menghadapi pencobaan Iblis. Makna peristiwa itu bagi kita adalah",
+            "Pilihan_jawaban": {
+                "a": "Jangan bergaul dengan Roh Kudus supaya tidak masuk ke dalam pencobaan",
+                "b": "Roh Kudus memberi kemenangan menghadapi godaan dan pencobaan Iblis",
+                "c": "Kita patut bergaul karib dengan Yesus dan Roh Kudus",
+                "d": "Jawaban B dan C benar"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "25",
+            "Kategori": "MODUL 1 : Tuhan Yang Maha Esa dan Allah Tritunggal",
+            "Soal": "Kitab Injil mencatat peringatan Yesus agar orang tidak menghujat Roh Kudus. Sikap dan perbuatan menghujat Roh Kudus adalah",
+            "Pilihan_jawaban": {
+                "a": "Memandang rendah pribadi Roh Kudus",
+                "b": "Tidak mengakui adanya Roh Kudus",
+                "c": "Mengandalkan teknologi modern",
+                "d": "Jawaban A dan B benar"
+            },
+            "Jawaban_Benar": "c"
+        },
+        {
+            "ID": "26",
+            "Kategori": "MODUL 2 : Manusia : Hakikat dan Tanggung Jawab",
+            "Soal": "Pernyataan yang tepat bahwa teori evolusi manusia bertentangan dengan firman Tuhan adalah sebagai berikut:",
+            "Pilihan_jawaban": {
+                "a": "Teori evolusi melengkapi data yang tidak pernah ditulis di dalam Alkitab",
+                "b": "Teori evolusi membuka jalan bagi manusia untuk tidak memercayai Allah karena dengan prinsip ini manusia dapat mempertahankan hidupnya sendiri tanpa Allah",
+                "c": "Teori evolusi menyebabkan manusia menjadi makhluk yang istimewa dibandingkan ciptaan yang lain",
+                "d": "Teori evolusi mampu memberikan fakta-fakta yang up to date berkenaan dengan mata rantai yang hilang dari evolusi manusia"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "27",
+            "Kategori": "MODUL 2 : Manusia : Hakikat dan Tanggung Jawab",
+            "Soal": "Di bawah ini merupakan tiga akibat buruk jika kita menerima pandangan bahwa manusia adalah hasil evolusi dari sesuatu yang tidak berpribadi, kecuali:",
+            "Pilihan_jawaban": {
+                "a": "Manusia akan mengganti hukum ilahi tentang kasih dan pelayanan menjadi hukum rimba",
+                "b": "Manusia dapat mengeksplorasi alam dengan lebih bertanggung jawab",
+                "c": "Manusia akan melegalkan militerisme",
+                "d": "Tersebarnya paham ateisme di seluruh dunia"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "28",
+            "Kategori": "MODUL 2 : Manusia : Hakikat dan Tanggung Jawab",
+            "Soal": "Imago Dei secara sederhana memiliki arti:",
+            "Pilihan_jawaban": {
+                "a": "Manusia diciptakan memiliki sifat kudus dari dirinya sendiri",
+                "b": "Manusia diciptakan memiliki pemahaman yang lengkap tentang Allah",
+                "c": "Manusia diciptakan memiliki kekuasaan yang tidak terbatas",
+                "d": "Manusia diciptakan memiliki sebagian sifat-sifat Allah"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "29",
+            "Kategori": "MODUL 2 : Manusia : Hakikat dan Tanggung Jawab",
+            "Soal": "Alamat ayat yang tepat bagi perkataan, 'Maka Allah menciptakan manusia itu menurut gambar-Nya, menurut gambar Allah diciptakan-Nya dia; laki-laki dan perempuan diciptakan-Nya mereka' adalah:",
+            "Pilihan_jawaban": {
+                "a": "Kejadian 1:26",
+                "b": "Kejadian 1:27",
+                "c": "Kejadian 2:6",
+                "d": "Kejadian 2:7"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "30",
+            "Kategori": "MODUL 2 : Manusia : Hakikat dan Tanggung Jawab",
+            "Soal": "Kompas moral manusia yang ada dalam dirinya adalah:",
+            "Pilihan_jawaban": {
+                "a": "Hati nurani",
+                "b": "Pola pikir",
+                "c": "Daya kreativitas",
+                "d": "Kemampuan sosial"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "31",
+            "Kategori": "MODUL 2 : Manusia : Hakikat dan Tanggung Jawab",
+            "Soal": "Pernyataan yang tepat berkenaan dengan penciptaan manusia menurut Mazmur 139:13-16 adalah:",
+            "Pilihan_jawaban": {
+                "a": "Allah menciptakan manusia dengan kesamaan yang khusus sehingga satu dengan yang lain dapat berkomunikasi",
+                "b": "Allah menciptakan manusia dengan pengetahuan yang tinggi tentang masa depan yang akan dijalaninya",
+                "c": "Allah mengetahui semua hal yang terjadi dalam proses pembentukan janin dalam kandungan sehingga setiap manusia memiliki keunikannya masing-masing",
+                "d": "Allah mengetahui bahwa manusia akan jatuh ke dalam dosa sehingga manusia diciptakan dengan cara yang sama dengan ciptaan yang lain"
+            },
+            "Jawaban_Benar": "c"
+        },
+        {
+            "ID": "32",
+            "Kategori": "MODUL 2 : Manusia : Hakikat dan Tanggung Jawab",
+            "Soal": "Hubungan yang benar antara konsep diri yang positif dengan berbagai karunia dalam 1 Korintus 12:7, 11 dapat dilihat dalam pernyataan berikut:",
+            "Pilihan_jawaban": {
+                "a": "Dengan konsep diri yang positif, seseorang dapat dengan mudah melayani dalam berbagai bidang pelayanan dan tidak memerlukan orang lain lagi",
+                "b": "Dengan konsep diri yang positif, seseorang dipercaya Tuhan untuk melayani dalam satu bidang pelayanan saja dalam Tubuh Kristus",
+                "c": "Dengan konsep diri yang positif, seseorang memiliki keyakinan bahwa Allah memberikan kepadanya minimal satu karunia agar dapat memperkaya Tubuh Kristus",
+                "d": "Dengan konsep diri yang positif, seseorang menggunakan semua karunia untuk keuntungan pribadinya"
+            },
+            "Jawaban_Benar": "c"
+        },
+        {
+            "ID": "33",
+            "Kategori": "MODUL 2 : Manusia : Hakikat dan Tanggung Jawab",
+            "Soal": "'Tetapi Allah telah memberikan kepada ..., masing-masing secara khusus, suatu tempat pada tubuh, seperti yang dikehendaki-Nya' (1 Kor. 12:18). Kata yang tepat untuk melengkapi ayat di atas adalah:",
+            "Pilihan_jawaban": {
+                "a": "Jemaat",
+                "b": "Anak-anak Allah",
+                "c": "Orang percaya",
+                "d": "Anggota"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "34",
+            "Kategori": "MODUL 2 : Manusia : Hakikat dan Tanggung Jawab",
+            "Soal": "Pelajaran rohani yang dapat kita ambil dari kisah Yusuf berkenaan dengan konsep diri yang benar dan sehat, dapat dilihat dalam pernyataan:",
+            "Pilihan_jawaban": {
+                "a": "Dengan konsep diri yang benar dan sehat, Yusuf dimampukan untuk keluar dari akar pahit, kekecewaan, dendam dan perasaan cemas atau takut",
+                "b": "Dengan konsep diri yang benar dan sehat, Yusuf dimampukan untuk menerima kenyataan terkait kelemahan tubuhnya",
+                "c": "Dengan konsep diri yang benar dan sehat, Yusuf dapat menghargai diri sendiri",
+                "d": "Dengan konsep diri yang benar dan sehat, Yusuf dimampukan untuk tidak kuatir akan masa depannya"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "35",
+            "Kategori": "MODUL 2 : Manusia : Hakikat dan Tanggung Jawab",
+            "Soal": "Fakta dari Markus 5:1–20 yang menyatakan bahwa orang yang kerasukan setan tersebut telah sembuh adalah:",
+            "Pilihan_jawaban": {
+                "a": "Orang yang kerasukan setan tersebut tidak lagi terikat tangan dan kakinya",
+                "b": "Orang yang kerasukan setan tersebut duduk, sudah berpakaian dan sudah waras",
+                "c": "Orang yang kerasukan setan tersebut meminta agar roh jahat yang mengganggunya dipindahkan ke dalam babi-babi",
+                "d": "Orang yang kerasukan setan tersebut dapat memanggil nama Tuhan Yesus dengan tepat"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "36",
+            "Kategori": "MODUL 2 : Manusia : Hakikat dan Tanggung Jawab",
+            "Soal": "Firman Tuhan yang memberitahu agar anak-anak Allah tidak hidup saling menyalahkan dan mencari kesalahan orang lain sementara dirinya sendiri juga melakukan kesalahan yang sama, terdapat dalam:",
+            "Pilihan_jawaban": {
+                "a": "Matius 22:37–39",
+                "b": "Kolose 3:16–17",
+                "c": "Matius 7:1–2",
+                "d": "Roma 3:23"
+            },
+            "Jawaban_Benar": "c"
+        },
+        {
+            "ID": "37",
+            "Kategori": "MODUL 2 : Manusia : Hakikat dan Tanggung Jawab",
+            "Soal": "Analogi yang tepat tentang lidah seperti yang dituliskan dalam Yakobus 3:1–12 adalah:",
+            "Pilihan_jawaban": {
+                "a": "Kemudi dalam sebuah kapal",
+                "b": "Unta masuk ke lubang jarum",
+                "c": "Harta terpendam dalam sebidang tanah",
+                "d": "Biji sesawi yang tumbuh menjadi besar"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "38",
+            "Kategori": "MODUL 2 : Manusia : Hakikat dan Tanggung Jawab",
+            "Soal": "Pernyataan yang tepat berkenaan dengan manusia sebagai makhluk yang bertanggung jawab atas ciptaan Allah adalah:",
+            "Pilihan_jawaban": {
+                "a": "Manusia diberi kuasa untuk berkuasa atas ciptaan Allah dan harus melestarikan, menjaga, serta merawatnya",
+                "b": "Manusia diberi hak istimewa untuk menguasai ciptaan Allah dan menghancurkannya",
+                "c": "Manusia hanya perlu memanfaatkan ciptaan Allah tanpa mempedulikan kelestariannya",
+                "d": "Manusia memiliki kewajiban untuk merusak ciptaan Allah demi kemajuan zaman"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "39",
+            "Kategori": "MODUL 3 : Masyarakat dan Gereja",
+            "Soal": "Apa yang dimaksud dengan gereja sebagai komunitas umat beriman?",
+            "Pilihan_jawaban": {
+                "a": "Gereja adalah tempat yang hanya digunakan untuk beribadah saja",
+                "b": "Gereja adalah suatu organisasi yang terdiri dari para pengurus yang menentukan keputusan-keputusan agama",
+                "c": "Gereja adalah komunitas umat beriman yang terikat dalam persekutuan dengan Tuhan dan sesama",
+                "d": "Gereja adalah lembaga yang berfungsi untuk membantu masyarakat secara ekonomi dan sosial"
+            },
+            "Jawaban_Benar": "c"
+        },
+        {
+            "ID": "40",
+            "Kategori": "MODUL 3 : Masyarakat dan Gereja",
+            "Soal": "Bagaimana peran gereja dalam kehidupan masyarakat?",
+            "Pilihan_jawaban": {
+                "a": "Gereja hanya berperan dalam hal spiritual dan tidak terlibat dalam masalah sosial masyarakat",
+                "b": "Gereja berperan dalam menyebarkan nilai-nilai agama dan mendukung pembangunan sosial dan kesejahteraan masyarakat",
+                "c": "Gereja hanya mengurus hal-hal terkait ibadah tanpa mempedulikan keadaan sosial masyarakat",
+                "d": "Gereja hanya berperan dalam mengatur tata cara ibadah tanpa memberikan dampak pada kehidupan sosial"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "41",
+            "Kategori": "MODUL 3 : Masyarakat dan Gereja",
+            "Soal": "Apa yang dimaksud dengan kesatuan umat dalam gereja?",
+            "Pilihan_jawaban": {
+                "a": "Semua umat gereja harus mengikuti aturan yang sama tanpa adanya perbedaan pandangan",
+                "b": "Kesatuan umat gereja terwujud dalam keberagaman yang tetap mengarah pada tujuan yang sama, yaitu hidup dalam persekutuan dengan Tuhan",
+                "c": "Kesatuan umat gereja hanya berlaku dalam hal ibadah dan doa bersama",
+                "d": "Kesatuan umat gereja berarti semua umat harus tinggal di satu tempat yang sama"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "42",
+            "Kategori": "MODUL 3 : Masyarakat dan Gereja",
+            "Soal": "Bagaimana gereja dapat membantu memecahkan masalah sosial di masyarakat?",
+            "Pilihan_jawaban": {
+                "a": "Gereja tidak memiliki peran dalam memecahkan masalah sosial di masyarakat",
+                "b": "Gereja dapat berperan dengan menyediakan bantuan materi dan meningkatkan kesadaran akan pentingnya nilai-nilai kasih dalam menyelesaikan masalah sosial",
+                "c": "Gereja hanya dapat membantu dengan mengajarkan doktrin agama tanpa berperan dalam masalah sosial",
+                "d": "Gereja dapat memecahkan masalah sosial melalui program-program politik"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "43",
+            "Kategori": "MODUL 3 : Masyarakat dan Gereja",
+            "Soal": "Sebagai orang beriman yang hidup di tengah-tengah masyarakat, Anda terpanggil untuk:",
+            "Pilihan_jawaban": {
+                "a": "tidak peduli pada persoalan-persoalan sosial",
+                "b": "hidup untuk diri sendiri",
+                "c": "masa bodoh terhadap kehidupan masyarakat",
+                "d": "menjadi teladan dalam kehidupan di tengah masyarakat"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "44",
+            "Kategori": "MODUL 3 : Masyarakat dan Gereja",
+            "Soal": "Sekelompok masyarakat dimulai dari:",
+            "Pilihan_jawaban": {
+                "a": "sekelompok suku",
+                "b": "sekelompok etnis",
+                "c": "sekelompok orang saja",
+                "d": "sekelompok agama"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "45",
+            "Kategori": "MODUL 3 : Masyarakat dan Gereja",
+            "Soal": "Masyarakat dapat dikelompokkan berdasarkan beberapa hal seperti:",
+            "Pilihan_jawaban": {
+                "a": "kelompok provinsi",
+                "b": "kelompok etnis",
+                "c": "wilayah tertentu",
+                "d": "kelompok daerah atau wilayah, ras, suku dan keturunannya"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "46",
+            "Kategori": "MODUL 4 : Hukum dan Perspektif Alkitab",
+            "Soal": "Hukum Taurat diberikan oleh Allah melalui:",
+            "Pilihan_jawaban": {
+                "a": "Musa",
+                "b": "Harun",
+                "c": "Daud",
+                "d": "Saul"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "47",
+            "Kategori": "MODUL 4 : Hukum dan Perspektif Alkitab",
+            "Soal": "Sepuluh hukum Tuhan terdiri dari 2 bagian utama, yaitu:",
+            "Pilihan_jawaban": {
+                "a": "Hukum sosial dan hukum keagamaan",
+                "b": "Hukum terhadap Tuhan dan hukum terhadap sesama",
+                "c": "Hukum yang mengatur nilai-nilai moral dan etika",
+                "d": "Hukum yang mengatur tentang makanan haram dan tidak haram"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "48",
+            "Kategori": "MODUL 4 : Hukum dan Perspektif Alkitab",
+            "Soal": "Sikap Tuhan Yesus terhadap hukum Taurat adalah:",
+            "Pilihan_jawaban": {
+                "a": "meniadakan",
+                "b": "menghilangkan",
+                "c": "menggenapi",
+                "d": "membatalkan"
+            },
+            "Jawaban_Benar": "c"
+        },
+        {
+            "ID": "49",
+            "Kategori": "MODUL 4 : Hukum dan Perspektif Alkitab",
+            "Soal": "Alkitab menyatakan bahwa dengan Hukum Taurat manusia:",
+            "Pilihan_jawaban": {
+                "a": "semakin taat kepada Allah",
+                "b": "mengenal dosa",
+                "c": "meninggalkan Allah",
+                "d": "hidup bersama Allah"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "50",
+            "Kategori": "MODUL 4 : Hukum dan Perspektif Alkitab",
+            "Soal": "Sikap yang patut dari orang Kristen terhadap hukum Taurat adalah:",
+            "Pilihan_jawaban": {
+                "a": "tidak mentaati",
+                "b": "hukum Taurat adalah Firman Allah",
+                "c": "tidak berlaku lagi sekarang ini",
+                "d": "hanya berlaku bagi umat Israel"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "51",
+            "Kategori": "MODUL 4 : Hukum dan Perspektif Alkitab",
+            "Soal": "Pengertian dari 'hukum Taurat' ialah:",
+            "Pilihan_jawaban": {
+                "a": "perintah Musa",
+                "b": "perintah Nabi",
+                "c": "perintah Tuhan",
+                "d": "perintah Raja"
+            },
+            "Jawaban_Benar": "c"
+        },
+        {
+            "ID": "52",
+            "Kategori": "MODUL 4 : Hukum dan Perspektif Alkitab",
+            "Soal": "10 Hukum Tuhan disebut juga dengan istilah:",
+            "Pilihan_jawaban": {
+                "a": "10 perintah Tuhan",
+                "b": "Dasa Titah",
+                "c": "10 Dasa Titah",
+                "d": "Hukum Taurat"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "53",
+            "Kategori": "MODUL 4 : Hukum dan Perspektif Alkitab",
+            "Soal": "Salah satu fungsi hukum Taurat adalah:",
+            "Pilihan_jawaban": {
+                "a": "untuk menghindari kejahatan",
+                "b": "untuk ketertiban sosial",
+                "c": "sebagai hukum negara",
+                "d": "sebagai hukum keagamaan"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "54",
+            "Kategori": "MODUL 4 : Hukum dan Perspektif Alkitab",
+            "Soal": "Pandangan Yesus tentang hukum Taurat adalah:",
+            "Pilihan_jawaban": {
+                "a": "membatalkan hukum Taurat",
+                "b": "tidak meniadakan hukum Taurat",
+                "c": "hukum Taurat berbeda dengan hukum Yesus",
+                "d": "hukum Taurat tidak berlaku pada zaman Yesus"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "55",
+            "Kategori": "MODUL 4 : Hukum dan Perspektif Alkitab",
+            "Soal": "Yesus menyimpulkan seluruh hukum Taurat dengan hukum:",
+            "Pilihan_jawaban": {
+                "a": "Kasihilah Tuhan Allahmu dan kasihilah sesamamu manusia",
+                "b": "Kasihilah Tuhan Allahmu dan kasihilah saudaramu seiman",
+                "c": "Kasihilah Tuhan Allahmu dan kasihilah musuhmu",
+                "d": "Kasihilah Tuhan Allahmu dan ampunilah sesamamu"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "55",
+            "Kategori": "MODUL 5 : Moral, Etika, dan Karakter",
+            "Soal": "Yang termasuk sikap hidup etis yaitu orang yang menunjukkan perbuatan yang:",
+            "Pilihan_jawaban": {
+                "a": "tidak sopan",
+                "b": "perkataannya tidak sesuai dengan perbuatan",
+                "c": "suka melanggar aturan",
+                "d": "baik dan benar"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "56",
+            "Kategori": "MODUL 5 : Moral, Etika, dan Karakter",
+            "Soal": "Pernikahan yang baik dan benar menurut Alkitab terjadi antara:",
+            "Pilihan_jawaban": {
+                "a": "seorang laki-laki dengan seorang perempuan",
+                "b": "seorang laki-laki dengan seorang laki-laki",
+                "c": "seorang perempuan dengan seorang perempuan",
+                "d": "seorang laki-laki dengan beberapa perempuan"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "57",
+            "Kategori": "MODUL 5 : Moral, Etika, dan Karakter",
+            "Soal": "Sebagai orang muda sebaiknya Anda tidak melakukan hubungan seks bebas karena:",
+            "Pilihan_jawaban": {
+                "a": "merasa malu",
+                "b": "takut pasangannya hamil",
+                "c": "takut ditulari penyakit kelamin",
+                "d": "adalah dosa di hadapan Tuhan"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "58",
+            "Kategori": "MODUL 5 : Moral, Etika, dan Karakter",
+            "Soal": "Homoseksual dan lesbian termasuk perilaku yang:",
+            "Pilihan_jawaban": {
+                "a": "berlaku dalam dunia modern",
+                "b": "suatu tren dalam pergaulan",
+                "c": "pilihan setiap orang",
+                "d": "penyimpangan seksual dan dosa"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "59",
+            "Kategori": "MODUL 5 : Moral, Etika, dan Karakter",
+            "Soal": "Sikap Anda terhadap maraknya Lesbian, Gay, Biseks, dan Transgender sebaiknya:",
+            "Pilihan_jawaban": {
+                "a": "menolak dan menjauhi mereka",
+                "b": "mengakui keberadaan mereka di tengah masyarakat",
+                "c": "dianggap sebagai orang yang tak waras",
+                "d": "membantu mereka untuk mengakui identitas dan jati diri yang sebenarnya"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "60",
+            "Kategori": "MODUL 5 : Moral, Etika, dan Karakter",
+            "Soal": "Maraknya tayangan pornografi melalui internet telah mengakibatkan:",
+            "Pilihan_jawaban": {
+                "a": "banyak remaja dan pemuda yang jatuh dalam dosa seksual",
+                "b": "merusak moralitas generasi muda",
+                "c": "mengakibatkan terjadinya banyak kasus perkosaan",
+                "d": "tidak berdampak buruk"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "61",
+            "Kategori": "MODUL 5 : Moral, Etika, dan Karakter",
+            "Soal": "Seks adalah karunia Tuhan yang hanya boleh dinikmati oleh:",
+            "Pilihan_jawaban": {
+                "a": "suami istri dalam pernikahan",
+                "b": "pemuda/i yang sedang berpacaran",
+                "c": "tidak boleh dilakukan karena merupakan dosa",
+                "d": "tergantung niatnya"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "62",
+            "Kategori": "MODUL 5 : Moral, Etika, dan Karakter",
+            "Soal": "Hubungan seks di luar nikah:",
+            "Pilihan_jawaban": {
+                "a": "sebagai bukti cinta yang sungguh",
+                "b": "untuk mengikat hubungan dalam berpacaran",
+                "c": "hal yang umum dilakukan kaum muda",
+                "d": "tidak dikehendaki Tuhan"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "63",
+            "Kategori": "MODUL 5 : Moral, Etika, dan Karakter",
+            "Soal": "Pada masa berpacaran pemuda/i dianjurkan untuk:",
+            "Pilihan_jawaban": {
+                "a": "menjaga sopan santun",
+                "b": "menjaga kekudusan hidup",
+                "c": "menghormati pasangannya",
+                "d": "dilakukan dengan bebas dan sesuka hati"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "64",
+            "Kategori": "MODUL 5 : Moral, Etika, dan Karakter",
+            "Soal": "Etika yang baik dan benar bagi orang Kristen adalah:",
+            "Pilihan_jawaban": {
+                "a": "tidak perlu menghargai dan mematuhi norma-norma dalam masyarakat",
+                "b": "taat pada firman Tuhan kalau cocok",
+                "c": "tidak mengikat kebebasan bergaul",
+                "d": "sopan santun dan saling menghormati"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "65",
+            "Kategori": "MODUL 6 : Budaya dan Perspektif Alkitab",
+            "Soal": "Budaya adalah:",
+            "Pilihan_jawaban": {
+                "a": "hasil karya, cipta, rasa dan karsa manusia dalam masyarakat.",
+                "b": "hasil penemuan seorang peneliti",
+                "c": "harta benda yang diterima sebagai warisan",
+                "d": "kemampuan seseorang untuk meniru karya orang lain"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "66",
+            "Kategori": "MODUL 6 : Budaya dan Perspektif Alkitab",
+            "Soal": "Yang dimaksud dengan budaya lokal adalah:",
+            "Pilihan_jawaban": {
+                "a": "budaya khas dari suatu suku yang mendiami suatu daerah",
+                "b": "budaya yang terdapat di berbagai tempat",
+                "c": "budaya yang berasal dari luar negeri",
+                "d": "budaya hasil rekayasa manusia"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "67",
+            "Kategori": "MODUL 6 : Budaya dan Perspektif Alkitab",
+            "Soal": "Yang dimaksud dengan peradaban adalah:",
+            "Pilihan_jawaban": {
+                "a": "hasil cipta, rasa karsa manusia yang luhur, halus dan bermutu tinggi",
+                "b": "hasil karya manusia yang belum maju",
+                "c": "daya cipta manusia yang ketinggalan zaman",
+                "d": "teknologi yang canggih"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "68",
+            "Kategori": "MODUL 6 : Budaya dan Perspektif Alkitab",
+            "Soal": "Mata pencaharian Adam setelah dihalau dari Taman Eden adalah:",
+            "Pilihan_jawaban": {
+                "a": "petani",
+                "b": "nelayan",
+                "c": "pengusaha",
+                "d": "penguasa"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "69",
+            "Kategori": "MODUL 6 : Budaya dan Perspektif Alkitab",
+            "Soal": "Salah satu sikap yang patut secara kristiani terhadap budaya, yaitu:",
+            "Pilihan_jawaban": {
+                "a": "menerima segala macam budaya tanpa syarat",
+                "b": "menerima budaya sebagai karya cipta manusia yang dapat digunakan untuk kemuliaan Tuhan",
+                "c": "menolak semua budaya karena dianggap sebagai berhala",
+                "d": "menerima budaya asing yang lebih modern"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "70",
+            "Kategori": "MODUL 6 : Budaya dan Perspektif Alkitab",
+            "Soal": "Budaya lokal yang dapat digunakan untuk ibadah kristiani adalah:",
+            "Pilihan_jawaban": {
+                "a": "bahasa",
+                "b": "seni patung",
+                "c": "lukisan",
+                "d": "tari-tarian"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "71",
+            "Kategori": "MODUL 6 : Budaya dan Perspektif Alkitab",
+            "Soal": "Budaya setempat yang harus kita hindari adalah:",
+            "Pilihan_jawaban": {
+                "a": "penyembahan berhala",
+                "b": "menghormati orangtua",
+                "c": "memperingati hari raya kristiani",
+                "d": "bersilaturahmi"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "72",
+            "Kategori": "MODUL 6 : Budaya dan Perspektif Alkitab",
+            "Soal": "Budaya nasional adalah:",
+            "Pilihan_jawaban": {
+                "a": "semua budaya yang terdapat dalam Negara Kesatuan Republik Indonesia",
+                "b": "budaya yang berasal dari luar negeri",
+                "c": "budaya yang lebih modern",
+                "d": "budaya dalam satu suku"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "73",
+            "Kategori": "MODUL 6 : Budaya dan Perspektif Alkitab",
+            "Soal": "Yang termasuk cagar budaya nasional adalah:",
+            "Pilihan_jawaban": {
+                "a": "Monumen Nasional",
+                "b": "Tugu Proklamasi",
+                "c": "Candi Borobudur",
+                "d": "Lagu Indonesia Raya"
+            },
+            "Jawaban_Benar": "c"
+        },
+        {
+            "ID": "74",
+            "Kategori": "MODUL 6 : Budaya dan Perspektif Alkitab",
+            "Soal": "Semboyan persatuan nasional kita adalah:",
+            "Pilihan_jawaban": {
+                "a": "lagu: Dari Sabang sampai Merauke",
+                "b": "tari perang",
+                "c": "bambu runcing",
+                "d": "Bhinneka Tunggal Ika"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "75",
+            "Kategori": "MODUL 7 : Ilmu Pengetahuan dan Teknologi",
+            "Soal": "Dalam kitab apakah dituliskan tentang asal mula alam semesta ini?",
+            "Pilihan_jawaban": {
+                "a": "Mazmur",
+                "b": "Kejadian",
+                "c": "Matius",
+                "d": "Amsal"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "76",
+            "Kategori": "MODUL 7 : Ilmu Pengetahuan dan Teknologi",
+            "Soal": "Metode berpikir yang menerapkan hal-hal yang umum terlebih dahulu untuk seterusnya dihubungkan dalam bagian-bagiannya yang khusus disebut:",
+            "Pilihan_jawaban": {
+                "a": "induktif",
+                "b": "intersubjektif",
+                "c": "deduktif",
+                "d": "sistemis"
+            },
+            "Jawaban_Benar": "c"
+        },
+        {
+            "ID": "77",
+            "Kategori": "MODUL 7 : Ilmu Pengetahuan dan Teknologi",
+            "Soal": "Ayat Alkitab yang memberikan arahan agar manusia mengabdikan segala sesuatu di bumi kepada Allah dan mengelolanya untuk memuliakan Allah adalah:",
+            "Pilihan_jawaban": {
+                "a": "Kejadian 1:28",
+                "b": "Kejadian 1:27",
+                "c": "Kejadian 1:26",
+                "d": "Kejadian 1:25"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "78",
+            "Kategori": "MODUL 7 : Ilmu Pengetahuan dan Teknologi",
+            "Soal": "Peristiwa dalam Alkitab yang menjelaskan tentang awal segala sesuatu yang hidup dan bendawi senantiasa merosot sehingga bumi kita ini akan berakhir nantinya (2 Ptr. 3:10 - 12) adalah:",
+            "Pilihan_jawaban": {
+                "a": "Air Bah Nuh",
+                "b": "Peristiwa Pentakosta",
+                "c": "Kedatangan Yesus yang Kedua",
+                "d": "manusia jatuh ke dalam dosa"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "79",
+            "Kategori": "MODUL 7 : Ilmu Pengetahuan dan Teknologi",
+            "Soal": "Alasan yang tepat untuk mengungkapkan bahwa antara Alkitab dan ilmu pengetahuan tidak ada pertentangan adalah:",
+            "Pilihan_jawaban": {
+                "a": "Alkitab tidak menolak ilmu pengetahuan, tetapi Allah mau manusia berusaha dengan giat mengembangkan ilmu pengetahuan untuk menolong manusia meningkatkan kehidupannya dalam upaya memuliakan penciptanya",
+                "b": "Alkitab bukanlah buku ilmu pengetahuan sehingga Alkitab tidak akan pernah membicarakan tentang fakta-fakta ilmu pengetahuan",
+                "c": "Ilmu pengetahuan berbicara tentang fakta yang jasmani sementara Alkitab berbicara tentang fakta yang rohani sehingga nyata bahwa keduanya memang tidak bertentangan",
+                "d": "Ilmu pengetahuan dapat menolong para ilmuwan untuk mencari keterangan yang tidak dicantumkan dalam Alkitab sehingga keduanya dapat melengkapi satu dengan yang lain"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "80",
+            "Kategori": "MODUL 7 : Ilmu Pengetahuan dan Teknologi",
+            "Soal": "Dampak negatif pemikiran Thomas Aquinas yang menempatkan alam di tempat yang lebih layak dalam kehidupan manusia adalah:",
+            "Pilihan_jawaban": {
+                "a": "Alkitab semakin disanjung tinggi sebagai satu-satunya sumber kebenaran yang mutlak",
+                "b": "Alam dan Alkitab memberi keterangan yang saling melengkapi untuk kemajuan hidup manusia",
+                "c": "Kedaulatan penuh terhadap akal budi manusia untuk mengembangkan konsep berpikirnya secara penuh terlepas dari Alkitab",
+                "d": "Menyadarkan manusia untuk meneliti Alkitab dan alam semesta bersama-sama bagi perkembangan ilmu pengetahuan"
+            },
+            "Jawaban_Benar": "c"
+        },
+        {
+            "ID": "81",
+            "Kategori": "MODUL 7 : Ilmu Pengetahuan dan Teknologi",
+            "Soal": "Interelasi Allah, manusia dan alam dapat dijelaskan dengan pernyataan berikut:",
+            "Pilihan_jawaban": {
+                "a": "Allah berada di atas segalanya. Manusia berkomunikasi ke atas dan ke bawah. Binatang hanya melihat sampai kepada manusia karena Allah telah menetapkan manusia untuk menjinakkan dan mengatur segalanya",
+                "b": "Manusia berada di atas segalanya karena Allah telah menetapkan manusia untuk mengatur alam, sehingga Allah tidak lagi campur tangan dengan apa yang akan dilakukan manusia terhadap alam",
+                "c": "Allah dan alam merupakan segalanya karena Allah telah menciptakan alam sebagai arena bagi manusia untuk mengatur segalanya. Manusia hanya dapat berkomunikasi dengan Allah jika dapat mengatur alam dengan baik",
+                "d": "Allah menciptakan manusia dan alam dengan posisi yang sejajar, sehingga alam dan manusia merupakan arena di mana Allah mengatur segalanya"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "82",
+            "Kategori": "MODUL 7 : Ilmu Pengetahuan dan Teknologi",
+            "Soal": "Bagian Alkitab yang menjelaskan bahwa karena kejatuhannya ke dalam dosa maka tubuh jasmani, kehendak, dan pikiran manusia rusak sehingga perlu dipulihkan di dalam Tuhan Yesus adalah Roma:",
+            "Pilihan_jawaban": {
+                "a": "10:9",
+                "b": "5:12",
+                "c": "1:16",
+                "d": "12:2"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "83",
+            "Kategori": "MODUL 8 : Politik dalam Pandangan Iman Kristen",
+            "Soal": "Teokrasi adalah sistem pemerintahan yang dipimpin oleh:",
+            "Pilihan_jawaban": {
+                "a": "seorang raja",
+                "b": "presiden",
+                "c": "perdana menteri",
+                "d": "Tuhan"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "84",
+            "Kategori": "MODUL 8 : Politik dalam Pandangan Iman Kristen",
+            "Soal": "Monarki adalah sistem pemerintahan yang berbentuk:",
+            "Pilihan_jawaban": {
+                "a": "republik",
+                "b": "negara kesatuan",
+                "c": "kerajaan",
+                "d": "negara kota"
+            },
+            "Jawaban_Benar": "c"
+        },
+        {
+            "ID": "85",
+            "Kategori": "MODUL 8 : Politik dalam Pandangan Iman Kristen",
+            "Soal": "Yeremia 29:7 mengajarkan kepada orang Kristen untuk:",
+            "Pilihan_jawaban": {
+                "a": "terlibat dalam pembangunan negara",
+                "b": "melawan pemerintahan yang sah",
+                "c": "menolak peraturan yang berlaku",
+                "d": "tidak mengambil peran apa pun"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "86",
+            "Kategori": "MODUL 8 : Politik dalam Pandangan Iman Kristen",
+            "Soal": "Tuhan Yesus memberikan teladan kepada kita dalam Mat. 22:15-22 untuk:",
+            "Pilihan_jawaban": {
+                "a": "membayar pajak",
+                "b": "menunggak pajak",
+                "c": "takut kepada Tuhan",
+                "d": "takut kepada kaisar"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "87",
+            "Kategori": "MODUL 8 : Politik dalam Pandangan Iman Kristen",
+            "Soal": "Menurut Roma 13:1 orang Kristen dianjurkan untuk:",
+            "Pilihan_jawaban": {
+                "a": "menolak pemerintah",
+                "b": "taat kepada pemerintah",
+                "c": "melakukan demonstrasi",
+                "d": "mengkritik pemerintah"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "88",
+            "Kategori": "MODUL 8 : Politik dalam Pandangan Iman Kristen",
+            "Soal": "Seseorang yang melawan pemerintah akan menerima konsekuensi berupa:",
+            "Pilihan_jawaban": {
+                "a": "menerima pujian",
+                "b": "tidak ada risiko apa pun",
+                "c": "menerima hukuman",
+                "d": "dianggap sebagai pahlawan"
+            },
+            "Jawaban_Benar": "c"
+        },
+        {
+            "ID": "89",
+            "Kategori": "MODUL 8 : Politik dalam Pandangan Iman Kristen",
+            "Soal": "Mengapa kita harus taat kepada pemerintah menurut Ibr. 13:17?",
+            "Pilihan_jawaban": {
+                "a": "Pemerintah memberikan perlindungan bagi warga masyarakat",
+                "b": "Pemerintah menekan rakyat",
+                "c": "Sebab pemerintah mengancam kebebasan rakyat",
+                "d": "Takut dihukum"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "90",
+            "Kategori": "MODUL 8 : Politik dalam Pandangan Iman Kristen",
+            "Soal": "Gereja mendukung pemerintah melalui:",
+            "Pilihan_jawaban": {
+                "a": "oposisi pemerintah",
+                "b": "mengakui pemerintahan yang sah",
+                "c": "mengkritik pemerintah",
+                "d": "menolak pemerintahan yang sah"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "91",
+            "Kategori": "MODUL 8 : Politik dalam Pandangan Iman Kristen",
+            "Soal": "Sebaiknya setiap warga negara memilih partai politik sebagai:",
+            "Pilihan_jawaban": {
+                "a": "wadah untuk menyalurkan aspirasi politik",
+                "b": "organisasi terlarang",
+                "c": "sarana mengkritisi pemerintah",
+                "d": "kesempatan mencari pekerjaan"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "92",
+            "Kategori": "MODUL 9 : Kerukunan Antar Umat Beragama",
+            "Soal": "Pemerintah Indonesia mengakui berapa agama?",
+            "Pilihan_jawaban": {
+                "a": "5",
+                "b": "6",
+                "c": "7",
+                "d": "4"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "93",
+            "Kategori": "MODUL 9 : Kerukunan Antar Umat Beragama",
+            "Soal": "Keragaman yang terdapat di masyarakat disebut:",
+            "Pilihan_jawaban": {
+                "a": "homogen",
+                "b": "pluralis",
+                "c": "multikultural",
+                "d": "heterogen"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "94",
+            "Kategori": "MODUL 9 : Kerukunan Antar Umat Beragama",
+            "Soal": "Salah satu penyebab timbulnya konflik bernuansa agama disebabkan oleh:",
+            "Pilihan_jawaban": {
+                "a": "semua agama mengajarkan yang baik",
+                "b": "semua agama mengajarkan kebenaran",
+                "c": "semua agama mengajarkan Allah yang sama",
+                "d": "agamakulah yang paling benar"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "95",
+            "Kategori": "MODUL 9 : Kerukunan Antar Umat Beragama",
+            "Soal": "Demi mewujudkan kerukunan umat beragama di Indonesia, pemerintah mencanangkan program:",
+            "Pilihan_jawaban": {
+                "a": "Trilogi Kerukunan",
+                "b": "Kerukunan umat beragama dengan pemerintah",
+                "c": "Kerukunan Intern Umat Beragama",
+                "d": "Kerukunan Antar Umat Beragama"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "96",
+            "Kategori": "MODUL 9 : Kerukunan Antar Umat Beragama",
+            "Soal": "Sebagai orang beriman yang hidup di tengah-tengah keberagaman agama dalam masyarakat, Anda terpanggil untuk:",
+            "Pilihan_jawaban": {
+                "a": "memiliki sikap toleransi dengan penganut agama lain",
+                "b": "menjadikan semua masyarakat menjadi Kristen",
+                "c": "masa bodoh terhadap kehidupan masyarakat",
+                "d": "menjadi teladan dalam kehidupan di tengah masyarakat"
+            },
+            "Jawaban_Benar": "d"
+        },
+        {
+            "ID": "97",
+            "Kategori": "MODUL 9 : Kerukunan Antar Umat Beragama",
+            "Soal": "Penyebab konflik di tengah-tengah masyarakat majemuk ialah:",
+            "Pilihan_jawaban": {
+                "a": "latar belakang kelahiran",
+                "b": "latar belakang ekonomi",
+                "c": "sentuhan-sentuhan agama, etnis, dan budaya",
+                "d": "tempat tinggal yang padat"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "98",
+            "Kategori": "MODUL 9 : Kerukunan Antar Umat Beragama",
+            "Soal": "Kemajemukan masyarakat Indonesia haruslah dilihat sebagai:",
+            "Pilihan_jawaban": {
+                "a": "kerugian",
+                "b": "potensi",
+                "c": "sumber pertengkaran",
+                "d": "penghambat pembangunan"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "99",
+            "Kategori": "MODUL 9 : Kerukunan Antar Umat Beragama",
+            "Soal": "Sikap yang baik dalam menghadapi perbedaan adalah:",
+            "Pilihan_jawaban": {
+                "a": "toleransi",
+                "b": "intoleransi",
+                "c": "tidak bergaul dengan orang yang berbeda agama",
+                "d": "orang yang berbeda keyakinan adalah musuh"
+            },
+            "Jawaban_Benar": "a"
+        },
+        {
+            "ID": "100",
+            "Kategori": "MODUL 9 : Kerukunan Antar Umat Beragama",
+            "Soal": "Bagaimanakah kita harus menyikapi kebudayaan yang berbeda dengan kita?",
+            "Pilihan_jawaban": {
+                "a": "Menolak",
+                "b": "Memahami",
+                "c": "Menghindari",
+                "d": "Tidak peduli"
+            },
+            "Jawaban_Benar": "b"
+        },
+        {
+            "ID": "101",
+            "Kategori": "MODUL 9 : Kerukunan Antar Umat Beragama",
+            "Soal": "Salah satu penyebab “intoleransi” terjadi di masyarakat adalah munculnya:",
+            "Pilihan_jawaban": {
+                "a": "materialisme",
+                "b": "individualisme",
+                "c": "sinkretisme",
+                "d": "fundamentalisme keagamaan"
+            },
+            "Jawaban_Benar": "d"
+        }
+]

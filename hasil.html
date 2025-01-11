@@ -1,0 +1,161 @@
+<!-- hasil.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Kuis - Website Kuis</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Chart.js for Grafis -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- jsPDF for PDF Export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- Animate.css for Animasi -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/hasil.css">
+</head>
+<body class="bg-light">
+    <div class="container py-4">
+        <div class="card shadow-sm">
+            <!-- Header: Nama Pengguna -->
+            <div class="card-header animate__animated animate__fadeInDown">
+                <h2 class="text-center" id="namaPengguna">Hasil Kuis Anda</h2>
+                <div class="d-flex justify-content-between mt-4 animate__animated animate__fadeInUp">
+                    <button id="ulangKuisBtn" class="btn btn-primary">Ulang Kuis</button>
+                    <button id="logoutBtn" class="btn btn-secondary">Keluar</button>
+                </div>
+            </div>
+            <div class="card-body">
+                <!-- Bagian Atas: Dashboard Skor dan Persentase -->
+                <div class="row mb-4 animate__animated animate__fadeInUp">
+                    <div class="col-md-6 mb-3">
+                        <div class="card text-white bg-success h-100">
+                            <div class="card-header">Skor</div>
+                            <div class="card-body">
+                                <h5 class="card-title" id="jumlahBenar">0 dari 0</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card text-white bg-info h-100">
+                            <div class="card-header">Persentase</div>
+                            <div class="card-body">
+                                <h5 class="card-title" id="persentaseSkor">0%</h5>
+                                <p id="perubahanSkor" class="mt-2"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian Tengah: Grafik dan Statistik -->
+                <div class="row mb-4">
+                    <!-- Grafik Durasi Pengerjaan Soal -->
+                    <div class="col-12 mb-4 animate__animated animate__fadeInUp">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Grafik Durasi Pengerjaan Soal</h5>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="grafikWaktu" height="200"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Grafik Performa Seiring Waktu -->
+                    <div class="col-12 mb-4 animate__animated animate__fadeInUp">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Grafik Performa Seiring Waktu</h5>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="grafikPerforma" height="200"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Akumulasi Jawaban Benar per Kategori</h3>
+                    <div id="progressBarsKategori"></div>
+                </div>
+                
+                <!-- Kotak Data -->
+                <div class="row mb-4 animate__animated animate__fadeInUp">
+                    <div class="col-md-4 mb-3">
+                        <div class="card text-white bg-secondary h-100">
+                            <div class="card-header">Waktu Rata-rata</div>
+                            <div class="card-body">
+                                <h5 class="card-title" id="waktuRataRata">0 detik</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card text-white bg-warning h-100">
+                            <div class="card-header">Soal Tercepat</div>
+                            <div class="card-body">
+                                <h5 class="card-title" id="soalTercepat">Nomor Soal: - , Waktu: 0 detik</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card text-white bg-danger h-100">
+                            <div class="card-header">Soal Terlama</div>
+                            <div class="card-body">
+                                <h5 class="card-title" id="soalTerlama">Nomor Soal: - , Waktu: 0 detik</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fitur Export Data -->
+                <div class="mb-4 animate__animated animate__fadeInUp">
+                    <button id="exportPdfBtn" class="btn btn-primary me-2">Export PDF</button>
+                    <button id="exportCsvBtn" class="btn btn-secondary">Export CSV</button>
+                </div>
+
+                <!-- Detail Jawaban -->
+                <div class="animate__animated animate__fadeInUp">
+                    <h4 class="mb-3">Detail Jawaban</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Soal</th>
+                                <th>Jawaban Anda</th>
+                                <th>Jawaban Benar</th>
+                                <th>Waktu (detik)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="detailJawaban">
+                            <!-- Detail jawaban akan dimuat di sini -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Riwayat Hasil Kuis Sebelumnya -->
+                <div class="mt-5 animate__animated animate__fadeInUp">
+                    <h4 class="mb-3">Riwayat Hasil Kuis Sebelumnya</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Tanggal</th>
+                                <th>Jumlah Benar</th>
+                                <th>Persentase</th>
+                            </tr>
+                        </thead>
+                        <tbody id="riwayatKuis">
+                            <!-- Riwayat kuis akan dimuat di sini -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jsPDF for PDF Export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/hasil.js"></script>
+</body>
+</html>
