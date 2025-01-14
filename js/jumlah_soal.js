@@ -1,81 +1,81 @@
 // jumlah_soal.js
 
+import { initializeApp } from "firebase/app";
+import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
+
+// Konfigurasi Firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyDRyIff2gv_ZaZA_UvrArw_nWTTsigMzf0",
+    authDomain: "afdeling-409ff.firebaseapp.com",
+    databaseURL: "https://afdeling-409ff.firebaseio.com",
+    projectId: "afdeling-409ff",
+    storageBucket: "afdeling-409ff.firebasestorage.app",
+    messagingSenderId: "38168645544",
+    appId: "1:38168645544:web:e7d7fa2eb3414213bf579d"
+};
+
+// Inisialisasi Firebase
+const app = initializeApp(firebaseConfig);
+
+// Inisialisasi Firestore
+const db = getFirestore(app);
+
 document.addEventListener('DOMContentLoaded', () => {
-    const jumlahSelect = document.getElementById('jumlah');
-    const infoSoal = document.getElementById('infoSoal');
-    const currentUser = localStorage.getItem('currentUser') || 'Anonymous';
+    console.log('Jumlah Soal JS loaded');
 
-    fetch('data/soal.json')
-    .then(response => response.json())
-    .then(data => {
-        // 1. Ambil riwayat user
-        const riwayatKey = `riwayat_${currentUser}`;
-        const riwayat = JSON.parse(localStorage.getItem(riwayatKey)) || [];
+    const currentUser = localStorage.getItem('currentUser');
+    if (!currentUser) {
+        window.location.href = 'login.html'; // Redirect jika belum login
+    }
 
-        // 2. Dapatkan ID soal yang sudah pernah dijawab benar
-        const sudahBenar = riwayat
-            .map(entry => entry.soalBenar || [])
-            .flat()
-            .map(id => parseInt(id));
+    // Ambil data jumlah soal yang sudah dipilih sebelumnya dari Firestore
+    getUserQuizData(currentUser);
 
-        // 3. Filter soal yang BELUM pernah dijawab benar
-        const belumBenar = data.filter(soal => 
-            !sudahBenar.includes(parseInt(soal.ID))
-        );
-
-        // Debugging
-        console.log("Soal sudah benar:", sudahBenar);
-        console.log("Soal belum benar:", belumBenar);
-
-        // 4. Tampilkan jumlah soal tersedia
-        const jumlahTersedia = belumBenar.length;
-        infoSoal.innerHTML = `<p>Jumlah soal tersedia: <strong>${jumlahTersedia}</strong></p>`;
-
-        // Bersihkan isi <select>
-        jumlahSelect.innerHTML = '';
-
-        // 5. Jika jumlahTersedia < 10, dropdown naik per 1
-        //    Jika ≥ 10, dropdown kelipatan 5 sampai 10
-        if (jumlahTersedia < 10) {
-            for (let i = 1; i <= jumlahTersedia; i++) {
-                const option = document.createElement('option');
-                option.value = i;
-                option.textContent = i;
-                jumlahSelect.appendChild(option);
-            }
-        } else {
-            // Kelipatan 5 hingga max 10 (atau lebih, sesuai kebutuhan)
-            const maxSoal = Math.min(100, jumlahTersedia);
-            for (let i = 5; i <= maxSoal; i += 5) {
-                const option = document.createElement('option');
-                option.value = i;
-                option.textContent = i;
-                jumlahSelect.appendChild(option);
-            }
-        }
-
-        // Jika jumlahTersedia < 1, user tidak bisa pilih apapun
-        if (jumlahTersedia < 1) {
-            infoSoal.innerHTML += `<p class="text-danger">
-                Tidak ada soal baru yang dapat dikerjakan.
-            </p>`;
-        }
-    })
-    .catch(error => {
-        console.error('Error memuat soal:', error);
-        infoSoal.innerHTML = `<p class="text-danger">Terjadi kesalahan saat memuat soal.</p>`;
-    });
-
-    // Event form submit
-    document.getElementById('jumlahSoalForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const jumlah = parseInt(jumlahSelect.value);
-        localStorage.setItem('jumlahSoal', jumlah);
-
-        // Reset jawabanUser untuk sesi baru
-        localStorage.removeItem('jawabanUser');
-
-        // Pindah ke kuis.html
-        window.location.href = 'kuis.html';
-    });
+    // Tombol submit jumlah soal
+    const submitBtn = document.getElementById('submitJumlahSoalBtn');
+    submitBtn.addEventListener('click', handleJumlahSoalSubmit);
 });
+
+// Fungsi untuk mengambil data jumlah soal dari Firestore
+async function getUserQuizData(user) {
+    try {
+        const userRef = doc(db, "users", user);
+        const userDoc = await getDoc(userRef);
+        
+        if (userDoc.exists()) {
+            const userData = userDoc.data();
+            const jumlahSoal = userData.jumlahSoal || 5; // Default 5 soal jika belum ada data
+            document.getElementById('jumlahSoalInput').value = jumlahSoal;
+        } else {
+            console.log("Pengguna tidak ditemukan di Firestore");
+        }
+    } catch (error) {
+        console.error("Error mengambil data jumlah soal:", error);
+    }
+}
+
+// Fungsi untuk menyimpan jumlah soal yang dipilih oleh pengguna
+async function handleJumlahSoalSubmit() {
+    const currentUser = localStorage.getItem('currentUser');
+    const jumlahSoal = document.getElementById('jumlahSoalInput').value;
+
+    if (!jumlahSoal || isNaN(jumlahSoal) || jumlahSoal < 1) {
+        alert('Silakan pilih jumlah soal yang valid.');
+        return;
+    }
+
+    try {
+        // Update jumlah soal di Firestore
+        const userRef = doc(db, "users", currentUser);
+        await setDoc(userRef, { jumlahSoal: parseInt(jumlahSoal) }, { merge: true });
+
+        // Simpan jumlah soal ke localStorage untuk kebutuhan selanjutnya
+        localStorage.setItem('jumlahSoal', jumlahSoal);
+
+        console.log("Jumlah soal berhasil disimpan di Firestore.");
+        window.location.href = 'quiz.html'; // Redirect ke halaman quiz
+    } catch (error) {
+        console.error("Error menyimpan jumlah soal:", error);
+        alert("Terjadi kesalahan saat menyimpan jumlah soal.");
+    }
+}

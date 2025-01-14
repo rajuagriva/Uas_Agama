@@ -8,20 +8,34 @@ let timerInterval;
 let timeLeft;
 let waktuSoal = []; // jika Anda butuh mencatat durasi per soal
 
+// Firebase Firestore Initialization
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
+
+// Konfigurasi Firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyDRyIff2gv_ZaZA_UvrArw_nWTTsigMzf0",
+    authDomain: "afdeling-409ff.firebaseapp.com",
+    databaseURL: "https://afdeling-409ff.firebaseio.com",
+    projectId: "afdeling-409ff",
+    storageBucket: "afdeling-409ff.firebasestorage.app",
+    messagingSenderId: "38168645544",
+    appId: "1:38168645544:web:e7d7fa2eb3414213bf579d"
+};
+
+// Inisialisasi Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
 document.addEventListener('DOMContentLoaded', () => {
     // Ambil jumlahSoal dari localStorage
     jumlahSoal = parseInt(localStorage.getItem('jumlahSoal')) || 5;
 
-    // Fetch data soal
-    fetch('data/soal.json')
-        .then(response => response.json())
-        .then(data => {
-            if (!Array.isArray(data) || data.length === 0) {
-                throw new Error('Data soal tidak valid atau kosong.');
-            }
-
+    // Fetch data soal dari Firestore
+    fetchSoalFromFirestore()
+        .then(() => {
             // 1. Acak soal (jika Anda mau) dan ambil "jumlahSoal" pertama
-            soalList = data.sort(() => Math.random() - 0.5).slice(0, jumlahSoal);
+            soalList = soalList.sort(() => Math.random() - 0.5).slice(0, jumlahSoal);
 
             // 2. Inisialisasi array jawabanUser & waktuSoal
             jawabanUser = new Array(jumlahSoal).fill(undefined);
@@ -42,6 +56,19 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Terjadi kesalahan saat memuat soal.');
         });
 });
+
+// Fungsi untuk mengambil soal dari Firestore
+async function fetchSoalFromFirestore() {
+    try {
+        const querySnapshot = await getDocs(collection(db, "soals"));
+        querySnapshot.forEach((doc) => {
+            soalList.push(doc.data());  // Simpan soal yang diambil dari Firestore
+        });
+    } catch (e) {
+        console.error("Gagal mengambil data soal:", e);
+        throw new Error("Gagal mengambil data soal");
+    }
+}
 
 // Fungsi menampilkan soal
 function loadSoal(index) {
@@ -145,30 +172,45 @@ function selesaikanKuis() {
     // Hentikan timer
     clearInterval(timerInterval);
 
-    // Simpan ringkas
-    const hasilKuis = {
-        jawabanUser,
-        jumlahSoal,
-        jumlahBenar,
-        waktuPengerjaan: (jumlahSoal * 40) - timeLeft, // misal
-        soalList
-    };
-    localStorage.setItem('hasilKuis', JSON.stringify(hasilKuis));
+    // Simpan hasil ke Firestore
+    saveQuizResult(jumlahBenar, persentase);
 
-    // Simpan ke riwayat
+    // Simpan ke riwayat (misalnya localStorage)
     simpanRiwayat(jumlahBenar, persentase);
 
     // Pindah ke halaman hasil
     window.location.href = 'hasil.html';
 }
 
-// Fungsi menyimpan ke riwayat
+// Fungsi menyimpan hasil kuis ke Firestore
+async function saveQuizResult(jumlahBenar, persentase) {
+    const currentUser = localStorage.getItem('currentUser') || 'Anonymous';
+    const hasilKuis = {
+        user: currentUser,
+        jumlahBenar,
+        persentase,
+        jawabanUser,
+        jumlahSoal,
+        soalList,
+        timestamp: new Date()
+    };
+
+    try {
+        await addDoc(collection(db, "quizResults"), hasilKuis);
+        console.log("Hasil kuis berhasil disimpan ke Firestore!");
+    } catch (e) {
+        console.error("Gagal menyimpan hasil kuis:", e);
+    }
+}
+
+// Fungsi menyimpan riwayat ke localStorage (opsional)
 function simpanRiwayat(jumlahBenar, persentase) {
     const currentUser = localStorage.getItem('currentUser') || 'Anonymous';
     const riwayatKey = `riwayat_${currentUser}`;
     const riwayat = JSON.parse(localStorage.getItem(riwayatKey)) || [];
 
     const tanggal = new Date().toLocaleString();
+
     // Kumpulkan ID soal yang benar
     let soalBenar = [];
     soalList.forEach((soal, i) => {

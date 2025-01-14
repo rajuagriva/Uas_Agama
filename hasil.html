@@ -1,4 +1,3 @@
-<!-- hasil.html -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -15,6 +14,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/hasil.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "API_KEY",               // Ganti dengan API Key Firebase Anda
+            authDomain: "your-app-id.firebaseapp.com", // Ganti dengan Auth Domain Firebase Anda
+            projectId: "your-project-id",        // Ganti dengan Project ID Firebase Anda
+            storageBucket: "your-app-id.appspot.com", // Ganti dengan Storage Bucket Firebase Anda
+            messagingSenderId: "sender-id",  // Ganti dengan Sender ID Firebase Anda
+            appId: "your-app-id",            // Ganti dengan App ID Firebase Anda
+            measurementId: "G-measurement-id"  // Ganti dengan Measurement ID Firebase Anda
+        };
+
+        // Inisialisasi Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
 </head>
 <body class="bg-light">
     <div class="container py-4">
@@ -157,5 +174,64 @@
     <!-- Custom JS -->
     <script src="js/index.js"></script>
     <script src="js/hasil.js"></script>
+
+    <script>
+        // Mengambil hasil dari localStorage atau sessionStorage
+        const userId = localStorage.getItem("userId"); // Anda bisa menggunakan ID pengguna yang sudah login
+
+        // Fungsi untuk menyimpan hasil kuis ke Firestore
+        function saveResultToFirebase() {
+            const hasilKuis = {
+                tanggal: new Date(),
+                jumlahBenar: jumlahBenar,  // Variabel jumlah jawaban benar
+                persentase: persentase,    // Variabel persentase skor
+                waktuRataRata: waktuRataRata, // Waktu rata-rata pengerjaan
+                soalTercepat: soalTercepat,  // Soal tercepat
+                soalTerlama: soalTerlama,  // Soal terlama
+                detailJawaban: detailJawaban  // Detail jawaban
+            };
+
+            // Menyimpan ke koleksi Firestore
+            db.collection("hasilKuis").doc(userId).set(hasilKuis)
+                .then(() => {
+                    console.log("Hasil kuis berhasil disimpan di Firebase!");
+                })
+                .catch((error) => {
+                    console.error("Gagal menyimpan hasil kuis: ", error);
+                });
+        }
+
+        // Menampilkan riwayat kuis
+        function getRiwayatKuisFromFirebase() {
+            db.collection("hasilKuis").doc(userId).get()
+                .then((doc) => {
+                    if (doc.exists) {
+                        const riwayat = doc.data();
+                        tampilkanRiwayat(riwayat);
+                    } else {
+                        console.log("Riwayat tidak ditemukan.");
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error mendapatkan riwayat: ", error);
+                });
+        }
+
+        function tampilkanRiwayat(riwayat) {
+            const riwayatKuisTable = document.getElementById("riwayatKuis");
+            const row = riwayatKuisTable.insertRow();
+            row.insertCell(0).textContent = riwayat.tanggal.toDateString();
+            row.insertCell(1).textContent = riwayat.jumlahBenar;
+            row.insertCell(2).textContent = riwayat.persentase + "%";
+        }
+
+        // Menyimpan hasil kuis ketika pengguna selesai
+        document.getElementById("ulangKuisBtn").addEventListener("click", function() {
+            saveResultToFirebase();
+        });
+
+        // Memanggil fungsi untuk mendapatkan riwayat
+        getRiwayatKuisFromFirebase();
+    </script>
 </body>
 </html>

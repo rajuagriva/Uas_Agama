@@ -1,67 +1,86 @@
 // hasil.js
 
+// Konfigurasi Firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyDRyIff2gv_ZaZA_UvrArw_nWTTsigMzf0",
+    authDomain: "afdeling-409ff.firebaseapp.com",
+    databaseURL: "https://afdeling-409ff.firebaseio.com",
+    projectId: "afdeling-409ff",
+    storageBucket: "afdeling-409ff.firebasestorage.app",
+    messagingSenderId: "38168645544",
+    appId: "1:38168645544:web:e7d7fa2eb3414213bf579d"
+};
+
+// Inisialisasi Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+// Variabel global
 let currentUser = 'Anonymous';
 let jumlahSoal = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Ambil currentUser dan jumlahSoal dari localStorage
     currentUser = localStorage.getItem('currentUser') || 'Anonymous';
     jumlahSoal = parseInt(localStorage.getItem('jumlahSoal')) || 5;
 
+    // Update nama pengguna di UI
     document.getElementById('namaPengguna').textContent = `Hasil Kuis Anda - ${currentUser}`;
 
-    // Ambil riwayat user
-    const riwayatKey = `riwayat_${currentUser}`;
-    const riwayat = JSON.parse(localStorage.getItem(riwayatKey)) || [];
-    if (riwayat.length === 0) {
-        alert('Tidak ada hasil kuis untuk ditampilkan.');
-        window.location.href = 'login.html';
-        return;
-    }
-
-    // Ambil sesi terakhir
-    const sesiTerakhir = riwayat[riwayat.length - 1];
-
-    // Fetch soal.json
-    fetch('data/soal.json')
-        .then(res => res.json())
-        .then(allSoal => {
-            // 1. Ambil semua soal sesuai ID di sesiTerakhir.soalIDs (TANPA re-random)
-            let selectedSoal = allSoal.filter(s => sesiTerakhir.soalIDs.includes(s.ID));
-
-            // 2. Sort agar urutannya sama dengan urutan di `soalIDs`
-            selectedSoal.sort((a, b) => {
-                return sesiTerakhir.soalIDs.indexOf(a.ID) - sesiTerakhir.soalIDs.indexOf(b.ID);
-            });
-
-            // Hanya ambil `jumlahSoal` sesuai data sesi
-            selectedSoal = selectedSoal.slice(0, sesiTerakhir.jumlahSoal);
-
-            // 3. Tampilkan hasil
-            tampilHasilSesiTerakhir(selectedSoal, sesiTerakhir);
-
-            // 4. Tampilkan riwayat
-            tampilRiwayat(riwayat);
-
-            // 5. Grafik Durasi (jika ada data)
-            if (selectedSoal.length > 0) {
-                generateGrafikWaktu(sesiTerakhir, selectedSoal);
+    // Ambil hasil kuis terakhir dari Firestore
+    getLatestQuizResult(currentUser)
+        .then(sesiTerakhir => {
+            if (!sesiTerakhir) {
+                alert('Tidak ada hasil kuis untuk ditampilkan.');
+                window.location.href = 'login.html';
+                return;
             }
 
-            // 6. Grafik Performa
-            generateGrafikPerforma(riwayat);
+            // Ambil data soal dari Firestore berdasarkan soalIDs
+            return getSoalFromFirestore(sesiTerakhir.soalIDs)
+                .then(allSoal => {
+                    // Ambil soal yang sesuai dengan sesiTerakhir.soalIDs
+                    let selectedSoal = allSoal.filter(s => sesiTerakhir.soalIDs.includes(s.ID));
 
-            // 7. Progress Bar Kategori
-            tampilProgressBarKategoriAkumulasi(allSoal, riwayat);
+                    // Sort soal agar urutannya sama dengan soalIDs
+                    selectedSoal.sort((a, b) => {
+                        return sesiTerakhir.soalIDs.indexOf(a.ID) - sesiTerakhir.soalIDs.indexOf(b.ID);
+                    });
+
+                    // Ambil jumlahSoal sesuai sesiTerakhir
+                    selectedSoal = selectedSoal.slice(0, sesiTerakhir.jumlahSoal);
+
+                    // Tampilkan hasil kuis di UI
+                    tampilHasilSesiTerakhir(selectedSoal, sesiTerakhir);
+
+                    // Tampilkan riwayat kuis di UI
+                    tampilRiwayat(currentUser);
+
+                    // Tampilkan grafik durasi
+                    if (selectedSoal.length > 0) {
+                        generateGrafikWaktu(sesiTerakhir, selectedSoal);
+                    }
+
+                    // Tampilkan grafik performa
+                    generateGrafikPerforma(currentUser);
+
+                    // Tampilkan progress bar kategori
+                    tampilProgressBarKategoriAkumulasi(currentUser);
+                });
         })
-        .catch(err => console.error('Error memuat soal:', err));
+        .catch(err => {
+            console.error('Error memuat hasil kuis:', err);
+            alert('Terjadi kesalahan saat memuat hasil kuis.');
+        });
 
-    // Tombol
+    // Tombol Ulang Kuis
     document.getElementById('ulangKuisBtn').addEventListener('click', () => {
-        localStorage.removeItem('jawabanUser');
         window.location.href = 'jumlah_soal.html';
     });
 
+    // Tombol Logout
     document.getElementById('logoutBtn').addEventListener('click', () => {
+        // Logout: clear localStorage dan redirect
         localStorage.clear();
         window.location.href = 'login.html';
     });
@@ -71,9 +90,59 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('exportCsvBtn').addEventListener('click', exportCSV);
 });
 
-// ----------------------
-// 1. Tampil Hasil Sesi Terakhir
-// ----------------------
+// Fungsi untuk mengambil hasil kuis terakhir dari Firestore
+async function getLatestQuizResult(userId) {
+    try {
+        const hasilKuisRef = db.collection('hasilKuis')
+            .where('userId', '==', userId)
+            .orderBy('tanggal', 'desc')
+            .limit(1);
+        const snapshot = await hasilKuisRef.get();
+        if (!snapshot.empty) {
+            const doc = snapshot.docs[0];
+            return doc.data();
+        } else {
+            return null;
+        }
+    } catch (error) {
+        console.error('Error mengambil hasil kuis terakhir:', error);
+        return null;
+    }
+}
+
+// Fungsi untuk mengambil data soal dari Firestore berdasarkan soalIDs
+async function getSoalFromFirestore(soalIDs) {
+    try {
+        // Firestore 'in' query dapat menampung maksimal 10 items
+        // Jika soalIDs lebih dari 10, lakukan multiple queries
+        const chunkedSoalIDs = chunkArray(soalIDs, 10);
+        let allSoal = [];
+
+        for (let chunk of chunkedSoalIDs) {
+            const soalRef = db.collection('soal').where('ID', 'in', chunk);
+            const snapshot = await soalRef.get();
+            snapshot.forEach(doc => {
+                allSoal.push(doc.data());
+            });
+        }
+
+        return allSoal;
+    } catch (error) {
+        console.error('Error mengambil soal dari Firestore:', error);
+        return [];
+    }
+}
+
+// Fungsi untuk memecah array menjadi chunk
+function chunkArray(array, size) {
+    const results = [];
+    for (let i = 0; i < array.length; i += size) {
+        results.push(array.slice(i, i + size));
+    }
+    return results;
+}
+
+// Fungsi untuk menampilkan hasil sesi terakhir
 function tampilHasilSesiTerakhir(soalList, sesiTerakhir) {
     const detailJawaban = document.getElementById('detailJawaban');
     if (!detailJawaban) return;
@@ -85,7 +154,6 @@ function tampilHasilSesiTerakhir(soalList, sesiTerakhir) {
     let fastestSoal = { nomor: -1, waktu: Infinity };
     let slowestSoal = { nomor: -1, waktu: 0 };
 
-    // Loop soalList dengan index = i
     soalList.forEach((soal, i) => {
         const userAnswer = sesiTerakhir.jawabanUser[i];
         const benar = (userAnswer === soal.Jawaban_Benar);
@@ -133,69 +201,94 @@ function tampilHasilSesiTerakhir(soalList, sesiTerakhir) {
     const totalSoal = sesiTerakhir.jumlahSoal;
     const persentase = ((jumlahBenar / totalSoal) * 100).toFixed(2);
 
-    document.getElementById('jumlahBenar').textContent = `${jumlahBenar} dari ${totalSoal}`;
-    document.getElementById('persentaseSkor').textContent = `${persentase}%`;
+    document.getElementById("jumlahBenar").textContent = `${jumlahBenar} dari ${totalSoal}`;
+    document.getElementById("persentaseSkor").textContent = `${persentase}%`;
 
     // Perubahan skor vs sesi sebelumnya
-    const riwayat = JSON.parse(localStorage.getItem(`riwayat_${currentUser}`)) || [];
-    if (riwayat.length > 1) {
-        const sesiSebelumnya = riwayat[riwayat.length - 2];
-        const perubahan = (persentase - sesiSebelumnya.persentase).toFixed(2);
-        const perubahanText =
-            (perubahan > 0) ? `↑ ${perubahan}%`
-            : (perubahan < 0) ? `↓ ${Math.abs(perubahan)}%`
-            : `0%`;
+    // Fetch all quiz results for the user
+    getAllQuizResults(currentUser)
+        .then(allResults => {
+            if (allResults.length > 1) {
+                const sesiSebelumnya = allResults[allResults.length - 2];
+                const perubahan = (persentase - sesiSebelumnya.persentase).toFixed(2);
+                const perubahanText =
+                    (perubahan > 0) ? `↑ ${perubahan}%`
+                    : (perubahan < 0) ? `↓ ${Math.abs(perubahan)}%`
+                    : `0%`;
 
-        const perubahanElem = document.getElementById('perubahanSkor');
-        perubahanElem.textContent = `Perubahan dari sesi sebelumnya: ${perubahanText}`;
+                const perubahanElem = document.getElementById('perubahanSkor');
+                perubahanElem.textContent = `Perubahan dari sesi sebelumnya: ${perubahanText}`;
 
-        if (perubahan > 0) {
-            perubahanElem.className = 'text-success';
-        } else if (perubahan < 0) {
-            perubahanElem.className = 'text-danger';
-        } else {
-            perubahanElem.className = 'text-secondary';
-        }
-    }
+                if (perubahan > 0) {
+                    perubahanElem.className = 'text-success';
+                } else if (perubahan < 0) {
+                    perubahanElem.className = 'text-danger';
+                } else {
+                    perubahanElem.className = 'text-secondary';
+                }
+            }
+        })
+        .catch(err => {
+            console.error('Error memuat perubahan skor:', err);
+        });
 
     // Waktu Rata-rata
     let avgTime = (soalList.length > 0) ? (totalWaktu / soalList.length).toFixed(2) : 0;
-    document.getElementById('waktuRataRata').textContent = `${avgTime} detik`;
+    document.getElementById("waktuRataRata").textContent = `${avgTime} detik`;
 
     // Soal Tercepat
     if (fastestSoal.nomor === -1) {
-        document.getElementById('soalTercepat').textContent = 'Tidak ada data waktu.';
+        document.getElementById("soalTercepat").textContent = 'Tidak ada data waktu.';
     } else {
-        document.getElementById('soalTercepat').textContent =
+        document.getElementById("soalTercepat").textContent =
             `Nomor Soal: ${fastestSoal.nomor}, Waktu: ${fastestSoal.waktu} detik`;
     }
 
     // Soal Terlama
     if (slowestSoal.nomor === -1 || slowestSoal.waktu === 0) {
-        document.getElementById('soalTerlama').textContent = 'Tidak ada data waktu.';
+        document.getElementById("soalTerlama").textContent = 'Tidak ada data waktu.';
     } else {
-        document.getElementById('soalTerlama').textContent =
+        document.getElementById("soalTerlama").textContent =
             `Nomor Soal: ${slowestSoal.nomor}, Waktu: ${slowestSoal.waktu} detik`;
     }
 }
 
-// ----------------------
-// 2. Riwayat
-// ----------------------
-function tampilRiwayat(riwayat) {
+// Fungsi untuk mengambil semua hasil kuis dari Firestore
+async function getAllQuizResults(userId) {
+    try {
+        const hasilKuisRef = db.collection('hasilKuis')
+            .where('userId', '==', userId)
+            .orderBy('tanggal', 'asc');
+        const snapshot = await hasilKuisRef.get();
+        const hasilList = [];
+        snapshot.forEach(doc => {
+            hasilList.push(doc.data());
+        });
+        return hasilList;
+    } catch (error) {
+        console.error('Error mengambil semua hasil kuis:', error);
+        return [];
+    }
+}
+
+// Fungsi untuk menampilkan riwayat kuis
+async function tampilRiwayat(userId) {
     const riwayatKuis = document.getElementById('riwayatKuis');
     if (!riwayatKuis) return;
     riwayatKuis.innerHTML = '';
 
-    riwayat.forEach(entry => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${entry.tanggal}</td>
-            <td>${entry.jumlahBenar}</td>
-            <td>${entry.persentase}%</td>
-        `;
-        riwayatKuis.appendChild(row);
-    });
+    try {
+        const semuaHasil = await getAllQuizResults(userId);
+        semuaHasil.forEach(entry => {
+            const row = riwayatKuis.insertRow();
+            const tanggal = entry.tanggal.toDate().toLocaleString();
+            row.insertCell(0).textContent = tanggal;
+            row.insertCell(1).textContent = entry.jumlahBenar;
+            row.insertCell(2).textContent = entry.persentase + "%";
+        });
+    } catch (error) {
+        console.error('Error menampilkan riwayat kuis:', error);
+    }
 }
 
 // ----------------------
@@ -256,131 +349,137 @@ function generateGrafikWaktu(sesiTerakhir, soalList) {
 // ----------------------
 // 4. Grafik Performa
 // ----------------------
-function generateGrafikPerforma(riwayat) {
+async function generateGrafikPerforma(userId) {
     const canvas = document.getElementById('grafikPerforma');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
 
-    const labels = riwayat.map((_, i) => `Sesi ${i + 1}`);
-    const data = riwayat.map(r => parseFloat(r.persentase));
+    try {
+        const semuaHasil = await getAllQuizResults(userId);
+        const labels = semuaHasil.map((_, i) => `Sesi ${i + 1}`);
+        const data = semuaHasil.map(r => parseFloat(r.persentase));
 
-    new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels,
-            datasets: [
-                {
-                    label: 'Persentase Skor',
-                    data,
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    fill: true,
-                    tension: 0.4
-                },
-                {
-                    label: 'Rata-rata Pengguna',
-                    data: labels.map(() => 70), // contoh
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderDash: [5, 5],
-                    fill: false
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                tooltip: {
-                    callbacks: {
-                        label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y}%`
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels,
+                datasets: [
+                    {
+                        label: 'Persentase Skor',
+                        data,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        fill: true,
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Rata-rata Pengguna',
+                        data: labels.map(() => 70), // Contoh, ganti dengan data rata-rata pengguna
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderDash: [5, 5],
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y}%`
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Grafik Performa Seiring Waktu'
                     }
                 },
-                title: {
-                    display: true,
-                    text: 'Grafik Performa Seiring Waktu'
+                scales: {
+                    y: { beginAtZero: true, max: 100 }
                 }
-            },
-            scales: {
-                y: { beginAtZero: true, max: 100 }
             }
-        }
-    });
+        });
+    } catch (error) {
+        console.error('Error generateGrafikPerforma:', error);
+    }
 }
 
 // ----------------------
 // 5. Progress Bar Akumulasi per Kategori
 // ----------------------
-function tampilProgressBarKategoriAkumulasi(allSoal, riwayat) {
+async function tampilProgressBarKategoriAkumulasi(userId) {
     const container = document.getElementById('progressBarsKategori');
     if (!container) return;
     container.innerHTML = '';
 
-    // Hitung total soal per kategori
-    const totalSoalPerKategori = {};
-    allSoal.forEach(s => {
-        const kat = s.Kategori || 'Lainnya';
-        if (!totalSoalPerKategori[kat]) {
-            totalSoalPerKategori[kat] = 0;
-        }
-        totalSoalPerKategori[kat]++;
-    });
+    try {
+        // Ambil semua hasil kuis untuk user
+        const semuaHasil = await getAllQuizResults(userId);
 
-    // Hitung total benar user (semua sesi) per kategori
-    const totalBenarPerKategori = {};
-    Object.keys(totalSoalPerKategori).forEach(k => {
-        totalBenarPerKategori[k] = 0;
-    });
+        // Ambil semua soal dari Firestore untuk mendapatkan kategori
+        const allSoalSnapshot = await db.collection('soal').get();
+        const allSoal = {};
+        allSoalSnapshot.forEach(doc => {
+            allSoal[doc.data().ID] = doc.data();
+        });
 
-    riwayat.forEach(session => {
-        for (let i = 0; i < session.jumlahSoal; i++) {
-            const soalID = session.soalIDs[i];
-            const soalDB = allSoal.find(s => s.ID === soalID);
-            if (!soalDB) continue;
+        // Hitung total soal per kategori dan total benar per kategori
+        const totalSoalPerKategori = {};
+        const totalBenarPerKategori = {};
 
-            const kat = soalDB.Kategori || 'Lainnya';
-            if (session.jawabanUser[i] === soalDB.Jawaban_Benar) {
-                totalBenarPerKategori[kat]++;
-            }
-        }
-    });
+        semuaHasil.forEach(entry => {
+            entry.soalIDs.forEach((soalID, i) => {
+                const soal = allSoal[soalID];
+                if (soal) {
+                    const kategori = soal.Kategori || 'Lainnya';
+                    totalSoalPerKategori[kategori] = (totalSoalPerKategori[kategori] || 0) + 1;
+                    if (entry.jawabanUser[i] === soal.Jawaban_Benar) {
+                        totalBenarPerKategori[kategori] = (totalBenarPerKategori[kategori] || 0) + 1;
+                    }
+                }
+            });
+        });
 
-    // Tampilkan progress bar
-    Object.keys(totalSoalPerKategori).forEach(kat => {
-        const totalSoalKat = totalSoalPerKategori[kat];
-        const totalBenarKat = totalBenarPerKategori[kat] || 0;
-        const persen = (totalSoalKat > 0)
-            ? ((totalBenarKat / totalSoalKat) * 100).toFixed(2)
-            : 0;
+        // Tampilkan progress bar per kategori
+        Object.keys(totalSoalPerKategori).forEach(kat => {
+            const totalSoalKat = totalSoalPerKategori[kat];
+            const totalBenarKat = totalBenarPerKategori[kat] || 0;
+            const persen = (totalSoalKat > 0)
+                ? ((totalBenarKat / totalSoalKat) * 100).toFixed(2)
+                : 0;
 
-        const wrapper = document.createElement('div');
-        wrapper.classList.add('mb-3');
+            const wrapper = document.createElement('div');
+            wrapper.classList.add('mb-3');
 
-        const label = document.createElement('h5');
-        label.textContent = `${kat} (${totalBenarKat}/${totalSoalKat}) = ${persen}%`;
-        wrapper.appendChild(label);
+            const label = document.createElement('h5');
+            label.textContent = `${kat} (${totalBenarKat}/${totalSoalKat}) = ${persen}%`;
+            wrapper.appendChild(label);
 
-        const progressDiv = document.createElement('div');
-        progressDiv.classList.add('progress');
-        progressDiv.style.height = '25px';
+            const progressDiv = document.createElement('div');
+            progressDiv.classList.add('progress');
+            progressDiv.style.height = '25px';
 
-        const bar = document.createElement('div');
-        bar.classList.add('progress-bar');
-        bar.setAttribute('role', 'progressbar');
-        bar.setAttribute('aria-valuenow', persen);
-        bar.setAttribute('aria-valuemin', '0');
-        bar.setAttribute('aria-valuemax', '100');
-        bar.style.width = `${persen}%`;
-        bar.textContent = `${persen}%`;
+            const bar = document.createElement('div');
+            bar.classList.add('progress-bar');
+            bar.setAttribute('role', 'progressbar');
+            bar.setAttribute('aria-valuenow', persen);
+            bar.setAttribute('aria-valuemin', '0');
+            bar.setAttribute('aria-valuemax', '100');
+            bar.style.width = `${persen}%`;
+            bar.textContent = `${persen}%`;
 
-        progressDiv.appendChild(bar);
-        wrapper.appendChild(progressDiv);
+            progressDiv.appendChild(bar);
+            wrapper.appendChild(progressDiv);
 
-        container.appendChild(wrapper);
-    });
+            container.appendChild(wrapper);
+        });
+
+    } catch (error) {
+        console.error('Error tampilProgressBarKategoriAkumulasi:', error);
+    }
 }
 
-// ----------------------
-// 6. Export PDF / CSV
-// ----------------------
+// Fungsi untuk mengexport hasil kuis ke PDF
 function exportPDF() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
@@ -396,7 +495,7 @@ function exportPDF() {
     doc.text('Detail Jawaban:', 14, 50);
     let y = 60;
     const rows = document.getElementById('detailJawaban').querySelectorAll('tr');
-    for (let row of rows) {
+    rows.forEach(row => {
         const cols = row.querySelectorAll('td');
         const rowData = `"${cols[0].innerText}","${cols[1].innerText}","${cols[2].innerText}","${cols[3].innerText}","${cols[4].innerText}"`;
         doc.text(rowData, 14, y);
@@ -405,17 +504,18 @@ function exportPDF() {
             doc.addPage();
             y = 20;
         }
-    }
+    });
 
     doc.save('hasil_kuis.pdf');
 }
 
+// Fungsi untuk mengexport hasil kuis ke CSV
 function exportCSV() {
     let csvContent = "data:text/csv;charset=utf-8,";
     csvContent += "No,Soal,Jawaban Anda,Jawaban Benar,Waktu (detik)\n";
 
     const rows = document.getElementById('detailJawaban').querySelectorAll('tr');
-    for (let row of rows) {
+    rows.forEach(row => {
         const cols = row.querySelectorAll('td');
         const rowData = [
             `"${cols[0].innerText}"`,
@@ -425,7 +525,7 @@ function exportCSV() {
             `"${cols[4].innerText}"`
         ].join(',');
         csvContent += rowData + "\n";
-    }
+    });
 
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
